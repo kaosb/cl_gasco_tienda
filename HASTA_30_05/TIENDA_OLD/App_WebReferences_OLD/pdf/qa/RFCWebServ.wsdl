@@ -1,0 +1,1147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smtp.gasco.cl/WSGasco/RFCWeb/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smtp.gasco.cl/WSGasco/RFCWeb/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://smtp.gasco.cl/WSGasco/RFCWeb/">
+      <s:element name="GetListaPedidoGranel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pe_rut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListaPedidoGranelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaPedidoGranelResult" type="tns:ArrayOfInfoPedidoGranel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInfoPedidoGranel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoPedidoGranel" nillable="true" type="tns:InfoPedidoGranel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoPedidoGranel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroPedido" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaEntrega" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroCalle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Block" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Depto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreComuna" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Region" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoPedido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VKORG" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANTESTANQUE" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTALLITROS" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total_Pedido" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZRFCWEB_GETVBRK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vkorg" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="kunnr" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZZRFCWEB_GETVBRKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZZRFCWEB_GETVBRKResult" type="tns:ZZRFCWEB_GETVBRKRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZRFCWEB_GETVBRKRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TVBRK" type="tns:ArrayOfZESTRFCIWEBVBRKVBRP" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RFCReturn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Retorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESTRFCIWEBVBRKVBRP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESTRFCIWEBVBRKVBRP" nillable="true" type="tns:ZESTRFCIWEBVBRKVBRP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESTRFCIWEBVBRKVBRP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VBELN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FKART" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WAERK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FKDAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZTERM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NETWR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="XBLNR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MWSBK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FKSTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FKIMG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VRKME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MATNR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZSDF_GENERA_FACTURA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sdf_genera_factura" type="tns:ZSDF_GENERA_FACTURAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZSDF_GENERA_FACTURAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_VBELN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_KSCHL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZSDF_GENERA_FACTURAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZSDF_GENERA_FACTURAResult" type="tns:ZSDF_GENERA_FACTURARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZSDF_GENERA_FACTURARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_RUTA" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZSDF_DATOS_FACTURA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sdf_datos_factura" type="tns:ZSDF_DATOS_FACTURAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZSDF_DATOS_FACTURAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FACTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUOTA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZSDF_DATOS_FACTURAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZSDF_DATOS_FACTURAResult" type="tns:ZSDF_DATOS_FACTURARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZSDF_DATOS_FACTURARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_RAZONSOCIAL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DIRECCION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_RUT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_NROCLIENTE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_GIRO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_NROFACTURA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_MONTO_TXT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_FECHAEMISION" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_FECHAPAGO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_MONTOAPAGAR" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_CODBAR" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_LISTA_FACTURA" type="tns:ArrayOfZESDF_VBRP" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DET_FACT_CC" type="tns:ArrayOfZESDF_VBRP_CC" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DET_FACT_SC" type="tns:ArrayOfZESDF_VBRP_SC" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_SALUDOS" type="tns:ArrayOfTLINE" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_AVISOS" type="tns:ArrayOfTLINE" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_COMENTARIOS" type="tns:ArrayOfTLINE" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DATECNICOS" type="tns:ArrayOfTLINE" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DESC_FACT" type="tns:ArrayOfZESDF_DESC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESDF_VBRP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESDF_VBRP" nillable="true" type="tns:ZESDF_VBRP" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESDF_VBRP">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FKIMG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VRKME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MEINS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NETWR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NETWR_TOT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARKTX" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESDF_VBRP_CC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESDF_VBRP_CC" nillable="true" type="tns:ZESDF_VBRP_CC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESDF_VBRP_CC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FKIMG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VRKME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NETWR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NETWR_TOT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARKTX" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESDF_VBRP_SC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESDF_VBRP_SC" nillable="true" type="tns:ZESDF_VBRP_SC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESDF_VBRP_SC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FKIMG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VRKME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ARKTX" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTLINE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TLINE" nillable="true" type="tns:TLINE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TLINE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TDFORMAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TDLINE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESDF_DESC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESDF_DESC" nillable="true" type="tns:ZESDF_DESC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESDF_DESC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LINE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZGG_DATOSGEOGRAFICOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="datosgeograficos" type="tns:ZZGG_DATOSGEOGRAFICOSParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZGG_DATOSGEOGRAFICOSParam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDPAIS" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDREGION" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDPROVINCIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDCOMUNA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDCIUDAD" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZGG_DATOSGEOGRAFICOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZZGG_DATOSGEOGRAFICOSResult" type="tns:ZZGG_DATOSGEOGRAFICOSRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZGG_DATOSGEOGRAFICOSRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGV_DATOSGEO" type="tns:ArrayOfZGGV_DATOSGEO" />
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGPAIS" type="tns:ArrayOfZGGPAIS" />
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGREGION" type="tns:ArrayOfZGGREGION" />
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGPROVINCIA" type="tns:ArrayOfZGGPROVINCIA" />
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGCOMUNA" type="tns:ArrayOfZGGCOMUNA" />
+              <s:element minOccurs="0" maxOccurs="1" name="TZGGCIUDAD" type="tns:ArrayOfZGGCIUDAD" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGV_DATOSGEO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGV_DATOSGEO" nillable="true" type="tns:ZGGV_DATOSGEO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGV_DATOSGEO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDPAIS" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDREGION" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDPROVINCIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDCOMUNA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREPAIS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREREGION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBREPROVINCIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRECOMUNA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGPAIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGPAIS" nillable="true" type="tns:ZGGPAIS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGPAIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGREGION">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGREGION" nillable="true" type="tns:ZGGREGION" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGREGION">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDPAIS" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGPROVINCIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGPROVINCIA" nillable="true" type="tns:ZGGPROVINCIA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGPROVINCIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDREGION" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGCOMUNA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGCOMUNA" nillable="true" type="tns:ZGGCOMUNA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGCOMUNA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDPROVINCIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDCIUDAD" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZGGCIUDAD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZGGCIUDAD" nillable="true" type="tns:ZGGCIUDAD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZGGCIUDAD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MANDT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZRFCWEB_GETRECUPRECIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfcwebgetrecuprecio" type="tns:ZZRFCWEB_GETRECUPRECIOParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZRFCWEB_GETRECUPRECIOParam">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="I_COMUNA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_FECHAVIGENCIA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZRFCWEB_GETRECUPRECIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZZRFCWEB_GETRECUPRECIOResult" type="tns:ZZRFCWEB_GETRECUPRECIORet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZRFCWEB_GETRECUPRECIORet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_PRECIOBRUTO" type="tns:ArrayOfZESTRFCIWEBRECUPRECIO" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZESTRFCIWEBRECUPRECIO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZESTRFCIWEBRECUPRECIO" nillable="true" type="tns:ZESTRFCIWEBRECUPRECIO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZESTRFCIWEBRECUPRECIO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MATNR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MAKTX" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KBETR" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="FVDESDE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FVHASTA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZFEAZ_GETPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zzfeaz_getpdfparam" type="tns:ZZFEAZ_GETPDFParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZFEAZ_GETPDFParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VBELN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INDFONDO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZFEAZ_GETPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZZFEAZ_GETPDFResult" type="tns:ZZFEAZ_GETPDFRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZFEAZ_GETPDFRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PDFDATA" type="s:base64Binary" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZMDIRFC_REGISTRO_SOLPES_WEB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rfcparam" type="tns:ZMDIRFC_REGISTRO_SOLPES_WEBParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_REGISTRO_SOLPES_WEBParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIRECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_OBSERVACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_ORIGEN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_SISOP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TELEF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_FECH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_HORA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_T_DETPEDIDO" type="tns:ArrayOfZTY_DETPEDIDO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZTY_DETPEDIDO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZTY_DETPEDIDO" nillable="true" type="tns:ZTY_DETPEDIDO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZTY_DETPEDIDO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MATNR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANTIDAD" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZMDIRFC_REGISTRO_SOLPES_WEBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZMDIRFC_REGISTRO_SOLPES_WEBResult" type="tns:ZMDIRFC_REGISTRO_SOLPES_WEBRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_REGISTRO_SOLPES_WEBRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="O_FOLIO" type="s:long" />
+              <s:element minOccurs="0" maxOccurs="1" name="I_T_DETPEDIDO" type="tns:ArrayOfZTY_DETPEDIDO" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZMDIRFC_COBERTURA_COMUNA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="coberturaparam" type="tns:ZMDIRFC_COBERTURA_COMUNAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_COBERTURA_COMUNAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZMDIRFC_COBERTURA_COMUNAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZMDIRFC_COBERTURA_COMUNAResult" type="tns:ZMDIRFC_COBERTURA_COMUNARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_COBERTURA_COMUNARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_MSG" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_MATNR" type="tns:ArrayOfCCVX_MATNR_TAB" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCCVX_MATNR_TAB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CCVX_MATNR_TAB" nillable="true" type="tns:CCVX_MATNR_TAB" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CCVX_MATNR_TAB">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MATNR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZMDIRFC_REGISTRO_CONTACTOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="regcttoparam" type="tns:ZMDIRFC_REGISTRO_CONTACTOSParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_REGISTRO_CONTACTOSParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIREC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TELEF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_SISOP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_INFGAS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZMDIRFC_REGISTRO_CONTACTOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZMDIRFC_REGISTRO_CONTACTOSResult" type="tns:ZMDIRFC_REGISTRO_CONTACTOSRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZMDIRFC_REGISTRO_CONTACTOSRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_FOLIO" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="CheckIndustrial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkindargs" type="tns:CheckIndustrialParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckIndustrialParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VKBUR" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckIndustrialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckIndustrialResult" type="tns:RFCReturn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCondicionPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZTERM" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCondicionPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCondicionPagoResult" type="tns:CondicionPagoRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CondicionPagoRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LCondicionPago" type="tns:ArrayOfCondicionPago" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfCondicionPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CondicionPago" nillable="true" type="tns:CondicionPago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CondicionPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ZTERM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetClaseDocumento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FKART" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClaseDocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClaseDocumentoResult" type="tns:ClaseDocumentoRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClaseDocumentoRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LClaseDocumento" type="tns:ArrayOfClaseDocumento" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfClaseDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClaseDocumento" nillable="true" type="tns:ClaseDocumento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ClaseDocumento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FKART" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VTEXT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGlosaMoneda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WAERS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlosaMonedaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlosaMonedaResult" type="tns:GlosaMonedaRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GlosaMonedaRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LGlosaMoneda" type="tns:ArrayOfGlosaMoneda" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfGlosaMoneda">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GlosaMoneda" nillable="true" type="tns:GlosaMoneda" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GlosaMoneda">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="WAERS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KTEXT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGlosaUnidadMedida">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MSEHI" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlosaUnidadMedidaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlosaUnidadMedidaResult" type="tns:GlosaUnidadMedidaRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GlosaUnidadMedidaRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="LGlosaUnidadMedida" type="tns:ArrayOfGlosaUnidadMedida" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfGlosaUnidadMedida">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GlosaUnidadMedida" nillable="true" type="tns:GlosaUnidadMedida" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GlosaUnidadMedida">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MSEHI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSEHL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetListaPedidoGranelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaPedidoGranel" />
+  </wsdl:message>
+  <wsdl:message name="GetListaPedidoGranelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaPedidoGranelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZZRFCWEB_GETVBRKSoapIn">
+    <wsdl:part name="parameters" element="tns:ZZRFCWEB_GETVBRK" />
+  </wsdl:message>
+  <wsdl:message name="ZZRFCWEB_GETVBRKSoapOut">
+    <wsdl:part name="parameters" element="tns:ZZRFCWEB_GETVBRKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZSDF_GENERA_FACTURASoapIn">
+    <wsdl:part name="parameters" element="tns:ZSDF_GENERA_FACTURA" />
+  </wsdl:message>
+  <wsdl:message name="ZSDF_GENERA_FACTURASoapOut">
+    <wsdl:part name="parameters" element="tns:ZSDF_GENERA_FACTURAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZSDF_DATOS_FACTURASoapIn">
+    <wsdl:part name="parameters" element="tns:ZSDF_DATOS_FACTURA" />
+  </wsdl:message>
+  <wsdl:message name="ZSDF_DATOS_FACTURASoapOut">
+    <wsdl:part name="parameters" element="tns:ZSDF_DATOS_FACTURAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZZGG_DATOSGEOGRAFICOSSoapIn">
+    <wsdl:part name="parameters" element="tns:ZZGG_DATOSGEOGRAFICOS" />
+  </wsdl:message>
+  <wsdl:message name="ZZGG_DATOSGEOGRAFICOSSoapOut">
+    <wsdl:part name="parameters" element="tns:ZZGG_DATOSGEOGRAFICOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZZRFCWEB_GETRECUPRECIOSoapIn">
+    <wsdl:part name="parameters" element="tns:ZZRFCWEB_GETRECUPRECIO" />
+  </wsdl:message>
+  <wsdl:message name="ZZRFCWEB_GETRECUPRECIOSoapOut">
+    <wsdl:part name="parameters" element="tns:ZZRFCWEB_GETRECUPRECIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZZFEAZ_GETPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:ZZFEAZ_GETPDF" />
+  </wsdl:message>
+  <wsdl:message name="ZZFEAZ_GETPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:ZZFEAZ_GETPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_REGISTRO_SOLPES_WEBSoapIn">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_REGISTRO_SOLPES_WEB" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_REGISTRO_SOLPES_WEBSoapOut">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_REGISTRO_SOLPES_WEBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_COBERTURA_COMUNASoapIn">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_COBERTURA_COMUNA" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_COBERTURA_COMUNASoapOut">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_COBERTURA_COMUNAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_REGISTRO_CONTACTOSSoapIn">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_REGISTRO_CONTACTOS" />
+  </wsdl:message>
+  <wsdl:message name="ZMDIRFC_REGISTRO_CONTACTOSSoapOut">
+    <wsdl:part name="parameters" element="tns:ZMDIRFC_REGISTRO_CONTACTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckIndustrialSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckIndustrial" />
+  </wsdl:message>
+  <wsdl:message name="CheckIndustrialSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckIndustrialResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCondicionPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCondicionPago" />
+  </wsdl:message>
+  <wsdl:message name="GetCondicionPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCondicionPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClaseDocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClaseDocumento" />
+  </wsdl:message>
+  <wsdl:message name="GetClaseDocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClaseDocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlosaMonedaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlosaMoneda" />
+  </wsdl:message>
+  <wsdl:message name="GetGlosaMonedaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlosaMonedaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlosaUnidadMedidaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlosaUnidadMedida" />
+  </wsdl:message>
+  <wsdl:message name="GetGlosaUnidadMedidaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlosaUnidadMedidaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RFCWebServSoap">
+    <wsdl:operation name="GetListaPedidoGranel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna lista pedidos granel, incluye cantidad estanques y litros totales, sólo pedidos hechos por web</wsdl:documentation>
+      <wsdl:input message="tns:GetListaPedidoGranelSoapIn" />
+      <wsdl:output message="tns:GetListaPedidoGranelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETVBRK">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna los 12 ultimos documentos</wsdl:documentation>
+      <wsdl:input message="tns:ZZRFCWEB_GETVBRKSoapIn" />
+      <wsdl:output message="tns:ZZRFCWEB_GETVBRKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_GENERA_FACTURA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Obtiene la ruta archivo pdf para visualizar factura</wsdl:documentation>
+      <wsdl:input message="tns:ZSDF_GENERA_FACTURASoapIn" />
+      <wsdl:output message="tns:ZSDF_GENERA_FACTURASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_DATOS_FACTURA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega los datos necesarios para la generacion de la factura</wsdl:documentation>
+      <wsdl:input message="tns:ZSDF_DATOS_FACTURASoapIn" />
+      <wsdl:output message="tns:ZSDF_DATOS_FACTURASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZZGG_DATOSGEOGRAFICOS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega los datos geograficos como comuna, provincia, region, pais</wsdl:documentation>
+      <wsdl:input message="tns:ZZGG_DATOSGEOGRAFICOSSoapIn" />
+      <wsdl:output message="tns:ZZGG_DATOSGEOGRAFICOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETRECUPRECIO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega un precio referencial por comuna para venta web</wsdl:documentation>
+      <wsdl:input message="tns:ZZRFCWEB_GETRECUPRECIOSoapIn" />
+      <wsdl:output message="tns:ZZRFCWEB_GETRECUPRECIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETPDF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega DTE en binario</wsdl:documentation>
+      <wsdl:input message="tns:ZZFEAZ_GETPDFSoapIn" />
+      <wsdl:output message="tns:ZZFEAZ_GETPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_SOLPES_WEB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registro solicitud de pedido por web</wsdl:documentation>
+      <wsdl:input message="tns:ZMDIRFC_REGISTRO_SOLPES_WEBSoapIn" />
+      <wsdl:output message="tns:ZMDIRFC_REGISTRO_SOLPES_WEBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_COBERTURA_COMUNA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Retorna el listado de materiales disponibles para la comuna y un mensaje asociado</wsdl:documentation>
+      <wsdl:input message="tns:ZMDIRFC_COBERTURA_COMUNASoapIn" />
+      <wsdl:output message="tns:ZMDIRFC_COBERTURA_COMUNASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_CONTACTOS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">hace registro de persona para recibir news en correo personal</wsdl:documentation>
+      <wsdl:input message="tns:ZMDIRFC_REGISTRO_CONTACTOSSoapIn" />
+      <wsdl:output message="tns:ZMDIRFC_REGISTRO_CONTACTOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustrial">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Verifica si un cliente es industrial o no</wsdl:documentation>
+      <wsdl:input message="tns:CheckIndustrialSoapIn" />
+      <wsdl:output message="tns:CheckIndustrialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCondicionPago">
+      <wsdl:input message="tns:GetCondicionPagoSoapIn" />
+      <wsdl:output message="tns:GetCondicionPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClaseDocumento">
+      <wsdl:input message="tns:GetClaseDocumentoSoapIn" />
+      <wsdl:output message="tns:GetClaseDocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaMoneda">
+      <wsdl:input message="tns:GetGlosaMonedaSoapIn" />
+      <wsdl:output message="tns:GetGlosaMonedaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaUnidadMedida">
+      <wsdl:input message="tns:GetGlosaUnidadMedidaSoapIn" />
+      <wsdl:output message="tns:GetGlosaUnidadMedidaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RFCWebServSoap" type="tns:RFCWebServSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListaPedidoGranel">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetListaPedidoGranel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETVBRK">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETVBRK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_GENERA_FACTURA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZSDF_GENERA_FACTURA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_DATOS_FACTURA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZSDF_DATOS_FACTURA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZGG_DATOSGEOGRAFICOS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZGG_DATOSGEOGRAFICOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETRECUPRECIO">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETRECUPRECIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETPDF">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZFEAZ_GETPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_SOLPES_WEB">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_REGISTRO_SOLPES_WEB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_COBERTURA_COMUNA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_COBERTURA_COMUNA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_CONTACTOS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_REGISTRO_CONTACTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustrial">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/CheckIndustrial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCondicionPago">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetCondicionPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaseDocumento">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetClaseDocumento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaMoneda">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetGlosaMoneda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaUnidadMedida">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetGlosaUnidadMedida" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RFCWebServSoap12" type="tns:RFCWebServSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListaPedidoGranel">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetListaPedidoGranel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETVBRK">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETVBRK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_GENERA_FACTURA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZSDF_GENERA_FACTURA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZSDF_DATOS_FACTURA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZSDF_DATOS_FACTURA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZGG_DATOSGEOGRAFICOS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZGG_DATOSGEOGRAFICOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZRFCWEB_GETRECUPRECIO">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETRECUPRECIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETPDF">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZFEAZ_GETPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_SOLPES_WEB">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_REGISTRO_SOLPES_WEB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_COBERTURA_COMUNA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_COBERTURA_COMUNA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZMDIRFC_REGISTRO_CONTACTOS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZMDIRFC_REGISTRO_CONTACTOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIndustrial">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/CheckIndustrial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCondicionPago">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetCondicionPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClaseDocumento">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetClaseDocumento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaMoneda">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetGlosaMoneda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlosaUnidadMedida">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GetGlosaUnidadMedida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RFCWebServ">
+    <wsdl:port name="RFCWebServSoap" binding="tns:RFCWebServSoap">
+      <soap:address location="http://smtp.gasco.cl/WSGasco/WSRFCWebqa/RFCWebServ.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RFCWebServSoap12" binding="tns:RFCWebServSoap12">
+      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSRFCWebqa/RFCWebServ.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

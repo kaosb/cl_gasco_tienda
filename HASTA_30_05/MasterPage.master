@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Gasco - Tienda de artefactos</title>
+    <script type="text/javascript" src="js/JQuery.js"></script>
+    <link href="main.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function setSearch(mv) {
+            if (mv == 'Buscar productos') {
+                $('#ctl00_txtSearch').val('');
+            }
+        }
+        function leaveSearch(mv) {
+            if (mv == '') {
+                $('#ctl00_txtSearch').val('Buscar productos');
+            }
+        }
+        function setDespacho() {
+            $('#calculadesp').css('cursor', 'pointer');
+            try {
+                $("#ctl00_dcalcom option[value='Selecciona tu comuna']").remove();
+            }
+            catch (err) {
+            }
+            $("#calculadesp").click(function () {
+                checkPrice();
+            });
+        }
+        function checkPrice() {
+            var mcom = $('#ctl00_dcalcom').val();
+            var mcod = $('#ctl00_hfDesp').val();
+            $('#resultDesp').html('cargando...');
+            $.ajax({
+                type: "POST",
+                url: "checkPrecio.ashx",
+                data: { com: mcom, cod: mcod }
+            })
+            .done(function (msg) {
+                $('#resultDesp').html(msg);
+            });
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:UpdatePanel ID="updatepnl1" runat="server">
+            <ContentTemplate>
+                <asp:ToolkitScriptManager ID="tsm" runat="server"></asp:ToolkitScriptManager>
+                <div>
+                    <asp:Panel ID="pnlDespacho" runat="server" Visible="false">
+                        <div class="lbox-home"></div>
+                        <div class="lbox-despacho">
+                            <asp:ImageButton CssClass="lbox-closebtn" ImageUrl="img/calen_cerrar.png" ID="ibcloselb" runat="server" OnClick="closeCalendar" />
+                            <asp:HiddenField ID="hfDesp" runat="server" />
+                            <asp:DropDownList ID="dcalcom" runat="server" CssClass="lbox-ddlcomuna" onchange="setDespacho()" ></asp:DropDownList>
+                            <img alt="" src="img/calen_btn-calcular.png" id="calculadesp" class="lbox-btncalcula" />
+                            <div id="resultDesp" class="lbox-valordesp"></div>
+                            <div class="calendariodespacho">
+                                <div class="cal-relleno"></div>
+                                <asp:Panel runat="server" ID="cal_lunes1">Lunes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_martes1">Martes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_miercoles1">Miércoles</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_jueves1">Jueves</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_viernes1">Viernes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_sabado1">Sábado</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_domingo1">Domingo</asp:Panel>
+                                <div style="clear:both;"></div>
+                                <div class="cal-relleno"></div>
+                                <asp:Panel runat="server" ID="cal_lunes2">Lunes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_martes2">Martes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_miercoles2">Miércoles</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_jueves2">Jueves</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_viernes2">Viernes</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_sabado2">-</asp:Panel>
+                                <asp:Panel runat="server" ID="cal_domingo2">-</asp:Panel>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <a href="terminos-y-condiciones.aspx" target="_blank"><div class="calendario_terminos"></div></a>
+                        </div>
+                    </asp:Panel>
+                    <div class="home_topLine"></div>
+                    <div class="dotted">
+                        <div class="topmenubar">
+                            <asp:TextBox ID="txtSearch" runat="server" Text="Buscar productos" onclick="setSearch(this.value);" onblur="leaveSearch(this.value);" OnTextChanged="searchByName"></asp:TextBox>
+                            <asp:ImageButton CssClass="mp_searchbtn" ID="ibSearch" runat="server" ImageUrl="img/mp_buscarbtn.png" OnClick="searchByName" />
+                            <asp:Label ID="lblCartCount" runat="server" Text="0" CssClass="cartcount"></asp:Label>
+                            <asp:ImageButton CssClass="mp_cartbtn" ID="ibCart" runat="server" ImageUrl="img/mp_carrobtn.png" OnClick="viewCart" />
+                        </div>
+                        <div class="home_header">
+                            <a href="http://tienda.gasco.cl"><div class="home_logo"></div></a>
+                            <div class="cb"></div>
+                        </div>
+                        <div class="separ_big"></div>
+                        <div class="main-navbtn topbtn" style="display:none;">
+                            <asp:ImageButton ID="ibResidencial" ImageUrl="img/mp_btnres1.png" runat="server" CssClass="scitem1" OnClick="setCategoria" CommandArgument="R" />
+                            <!--<asp:ImageButton ID="ibComercial" ImageUrl="img/mp_btncom2.png" runat="server" CssClass="scitem1" OnClick="setCategoria" CommandArgument="C" />-->
+                        </div>
+                        <asp:Panel ID="pnlResidencial" runat="server">
+                            <div class="main-navsc">
+                                <a href="ver-categoria.aspx?f=calefaccion"><img alt="calefaccion" src="img/mp_sc_calefaccion.png" class="scitem1" /></a>
+                                <a href="ver-categoria.aspx?f=cocinas-y-hornos"><img alt="calefaccion" src="img/mp_sc_cocina.png" class="scitem2" /></a>
+                                <a href="ver-categoria.aspx?f=calefones-y-termos"><img alt="calefaccion" src="img/mp_sc_calefones.png" class="scitem2" /></a>
+                                <a href="ver-categoria.aspx?f=patio-y-terraza"><img alt="calefaccion" src="img/mp_sc_terraza.png" class="scitem2" /></a>
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel ID="pnlComercial" runat="server" Visible="false">
+                            <div class="main-navsc">
+                                <a href="ver-categoria.aspx?f=patio-heater"><img alt="calefaccion" src="img/mp_sr_patioheater.png" class="scitem1" /></a>
+                                <a href="ver-categoria.aspx?f=hornos"><img alt="calefaccion" src="img/mp_sr_horno.png" class="scitem2" /></a>
+                                <a href="ver-categoria.aspx?f=cocina"><img alt="calefaccion" src="img/mp_sr_cocina.png" class="scitem2" /></a>
+                                <a href="ver-categoria.aspx?f=otros"><img alt="calefaccion" src="img/mp_sr_otros.png" class="scitem2" /></a>
+                            </div>
+                        </asp:Panel>
+                        <div class="main-content">
+                            <asp:Panel ID="pnlLeft" runat="server" CssClass="leftPanel">
+                                <div class="leftsearch">
+                                    <br>
+                                    <asp:Panel runat="server" ID="pnlCat" Visible="false">
+                                        <!--<p style="font-weight:bold;font-size:14px;margin:5px 0px;color:#4B565C;">Filtrar por:</p>-->
+                                        <!--<div class="mp-smallsep"></div>-->
+                                        <img src="img/mp-searchcat.png" alt="buscar-categoria" />
+                                        <!--<div class="mp-smallsep"></div>-->
+                                        <asp:LinkButton ID="c1" runat="server" OnClick="catFilter" CommandArgument=""><p>Mostrar todos</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:Repeater ID="rptCat" runat="server">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="lbcat" runat="server" OnClick="catFilter" CommandArgument='<%# Eval("uri") %>'><p><%# Eval("texto") %></p></asp:LinkButton>
+                                                <div class="mp-smallsep" style="background-image:url();"></div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="pnlSubcat" Visible="false">
+                                        
+                                        <img src="img/mp-searchsubcat.png" alt="buscar-sub-categoria" />
+                                        
+                                        <asp:LinkButton ID="sc1" runat="server" OnClick="subcatFilter" CommandArgument=""><p>Mostrar todos</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:Repeater ID="rptSubcat" runat="server">
+                                            <ItemTemplate>
+                                                <asp:LinkButton ID="lbsubcat" runat="server" OnClick="subcatFilter" CommandArgument='<%# Eval("uri") %>'><p><%# Eval("texto") %></p></asp:LinkButton>
+                                                <div class="mp-smallsep" style="background-image:url();"></div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </asp:Panel>
+                                    <asp:Panel runat="server" ID="mPnlPrice">
+                                        <!--<div class="mp-smallsep"></div>-->
+                                        <img src="img/mp-searchprice.png" alt="buscar-precio" />
+                                        <!--<div class="mp-smallsep"></div>-->
+                                        <asp:LinkButton ID="s1" runat="server" OnClick="priceFilter" CommandArgument=""><p>Mostrar todos</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:LinkButton ID="s2" runat="server" OnClick="priceFilter" CommandArgument="&pf=0&pt=50000"><p>Menos de $50.000</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:LinkButton ID="s3" runat="server" OnClick="priceFilter" CommandArgument="&pf=50000&pt=100000"><p>De $50.000 a $100.000</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:LinkButton ID="s4" runat="server" OnClick="priceFilter" CommandArgument="&pf=100000&pt=150000"><p>De $100.000 a $150.000</p></asp:LinkButton>
+                                        <div class="mp-smallsep" style="background-image:url();"></div>
+                                        <asp:LinkButton ID="s5" runat="server" OnClick="priceFilter" CommandArgument="&pf=150000&pt=5000000"><p>Más de $150.000</p></asp:LinkButton>
+                                        <!--<div class="mp-smallsep"></div>-->
+                                    </asp:Panel>
+                                    <asp:Panel ID="pnlOtros" runat="server" Visible="false">
+                                        <div class="mp-smallsep" style="margin:15px 0px;"></div>
+                                        <a href="informacion-y-consejos-de-artefactos.aspx"><img alt="calefaccion" src="img/mp_consejos-y-uso-artefactos.png" class="scitem1" /></a><div class="cb"></div>
+                                        <div class="mp-smallsep" style="margin:15px 0px;"></div>
+                                        <a href="medios-de-pago.aspx"><img alt="calefaccion" src="img/mp_formas-de-pago.png" class="scitem2" /></a><div class="cb"></div>
+                                        <div class="mp-smallsep" style="margin:15px 0px;"></div>
+                                        <a href="servicios-e-instalaciones.aspx"><img alt="calefaccion" src="img/mp_servicio-e-instalaciones.png" class="scitem2" /></a><div class="cb"></div>
+                                        <div class="mp-smallsep" style="margin:15px 0px;"></div>
+                                    </asp:Panel>
+                                    <div style="position:relative;bottom:0px;margin:30px 0px;">
+                                        <img alt="telefonos" src="img/mp_fonosleft.png" />
+                                    </div>
+                                </div>
+                            </asp:Panel>
+
+                            <asp:Panel ID="pnlRight" runat="server" CssClass="rightPanel">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </asp:Panel>
+                            <div class="cb"></div>
+                        </div>
+                    </div>
+
+                    <div class="home_bottomLine">
+                        <div class="main-content">
+                            <div class="footertext">
+                                <p>GASCO &copy; 2014 / <a href="terminos-y-condiciones.aspx"> TÉRMINOS Y CONDICIONES</a></p>
+                                <p><a href="preguntas-frecuentes.aspx">PREGUNTAS FRECUENTES</a> / <a href="despacho-y-costos-de-envio.aspx">COSTOS DE ENVÍO</a> / MAPA DEL SITIO / <a href="contacto.aspx"> CONTACTO</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        <asp:UpdateProgress ID="up1" runat="server" AssociatedUpdatePanelID="updatepnl1">
+            <ProgressTemplate>
+                <div class="tramatran"></div>
+                <div class="loader"><img alt="cargando..." src="img/loading_64.gif" /></div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </form>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-47088193-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>

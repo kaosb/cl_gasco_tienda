@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smtp.gasco.cl/WSGasco/WSKSK/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSK/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSK/">
+      <s:element name="ZKSK_CONSULTA_DIRECC_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consdirclteparam" type="tns:ZKSK_CONSULTA_DIRECC_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_DIRECC_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_DIRECC_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_DIRECC_CLIENTEResult" type="tns:ZKSK_CONSULTA_DIRECC_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_DIRECC_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_DIRECCIONES" type="tns:ArrayOfZKSK_DIR_CLIENTE_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="RFCReturn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Retorno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_DIR_CLIENTE_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_DIR_CLIENTE_RFC" nillable="true" type="tns:ZKSK_DIR_CLIENTE_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_DIR_CLIENTE_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CALLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMP_DIR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIUDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REGION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ORGVTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_LOG_COMPRAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conslogparam" type="tns:ZKSK_CONSULTA_LOG_COMPRASParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_LOG_COMPRASParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_LOG_COMPRASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_LOG_COMPRASResult" type="tns:ZKSK_CONSULTA_LOG_COMPRASRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_LOG_COMPRASRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_COMPRAS_CAB" type="tns:ArrayOfZKSK_VENTA_CAB_RFC" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_COMPRAS_DET" type="tns:ArrayOfZKSK_VENTA_DET_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_VENTA_CAB_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_VENTA_CAB_RFC" nillable="true" type="tns:ZKSK_VENTA_CAB_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_VENTA_CAB_RFC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CORRELATIVO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEDIDO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ENTREGA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FACTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FOLIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEDIDO_VALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ENTREGA_VALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FACTURA_VALE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTEPROS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHAVTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COD_AUTORIZACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NRO_TARJETA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HORA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_CREDEB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UNIQUEID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NRO_CUOTAS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_PAGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_TRANSACCION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_VENTA_DET_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_VENTA_DET_RFC" nillable="true" type="tns:ZKSK_VENTA_DET_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_VENTA_DET_RFC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CORRELATIVO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PEDIDO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CORREL_POS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROD_DESCR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANTIDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_CIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_DESCR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_DSCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_DSCTO_MNT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRECIO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consprecioparam" type="tns:ZKSK_CONSULTA_PRECIOParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRECIOParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_ORGVTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRECIOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_PRECIOResult" type="tns:ZKSK_CONSULTA_PRECIORet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRECIORet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_PRECIO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DESCUENTO" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRODUCTOS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consproductoparam" type="tns:ZKSK_CONSULTA_PRODUCTOSParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRODUCTOSParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CODCLIENTE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRODUCTOSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_PRODUCTOSResult" type="tns:ZKSK_CONSULTA_PRODUCTOSRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRODUCTOSRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_PRODUCTO" type="tns:ArrayOfZKSK_PRODUCTOS" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_JERARQUIA" type="tns:ArrayOfZKSK_JERARQUIA_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_PRODUCTOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_PRODUCTOS" nillable="true" type="tns:ZKSK_PRODUCTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_PRODUCTOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRECIO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCUENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STOCK" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GLOSA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GLOSA_EXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_CIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_CIL_DESC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_DSCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALE_DSCTO_MNT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_JERARQUIA_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_JERARQUIA_RFC" nillable="true" type="tns:ZKSK_JERARQUIA_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_JERARQUIA_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FAMILIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SUBCATEGORIA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_STOCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consstockparam" type="tns:ZKSK_CONSULTA_STOCKParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_STOCKParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_PRODUCTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_STOCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_STOCKResult" type="tns:ZKSK_CONSULTA_STOCKRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_STOCKRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_STOCK" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creaclteparam" type="tns:ZKSK_CREA_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_DATOS_CLIENTE" type="tns:ZKSK_CLIENTE_PRO_RFC" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIRECCION_CLIENTE" type="tns:ZKSK_DIR_CLIENTE_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_CLIENTE_PRO_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RUT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL_FIJO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL_MOVIL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CREA_CLIENTEResult" type="tns:ZKSK_CREA_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_CODCLIENTE" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_PROSPECTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creaprospectoparam" type="tns:ZKSK_CREA_PROSPECTOParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_PROSPECTOParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_RUT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_CALLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_NUMERO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMP_DIR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_CIUDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_REGION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TEL_FIJO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TEL_MOVIL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_PROSPECTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CREA_PROSPECTOResult" type="tns:ZKSK_CREA_PROSPECTORet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_PROSPECTORet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_CLIENTE_PROSPECTO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_DIRECCION_ID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_ORGVTA" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_MODIFICA_PROSPECTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modprospectoparam" type="tns:ZKSK_MODIFICA_PROSPECTOParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MODIFICA_PROSPECTOParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_DATOS_PROSPECTO" type="tns:ZKSK_CLIENTE_PRO_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MODIFICA_PROSPECTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_MODIFICA_PROSPECTOResult" type="tns:ZKSK_MODIFICA_PROSPECTORet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MODIFICA_PROSPECTORet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_DATOS_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consdatoclteparam" type="tns:ZKSK_CONSULTA_DATOS_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_DATOS_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_DATOS_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_DATOS_CLIENTEResult" type="tns:ZKSK_CONSULTA_DATOS_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_DATOS_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_DATOS_CLIENTE" type="tns:ZKSK_CLIENTE_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ZKSK_CLIENTE_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RUT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MAIL_CONFIRMA_COMPRA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailconfirmaparam" type="tns:ZKSK_MAIL_CONFIRMA_COMPRAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MAIL_CONFIRMA_COMPRAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_FACTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIRECCION_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MAIL_CONFIRMA_COMPRAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_MAIL_CONFIRMA_COMPRAResult" type="tns:ZKSK_MAIL_CONFIRMA_COMPRARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MAIL_CONFIRMA_COMPRARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_MAIL_ORDEN_DESPACHO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mailordendespachoparam" type="tns:ZKSK_MAIL_ORDEN_DESPACHOParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MAIL_ORDEN_DESPACHOParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_FACTURA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIRECCION_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MAIL_ORDEN_DESPACHOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_MAIL_ORDEN_DESPACHOResult" type="tns:ZKSK_MAIL_ORDEN_DESPACHORet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MAIL_ORDEN_DESPACHORet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_ELIMINA_DIRECC_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deldirclteparam" type="tns:ZKSK_ELIMINA_DIRECC_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_ELIMINA_DIRECC_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_ADDRESS_ID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_ELIMINA_DIRECC_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_ELIMINA_DIRECC_CLIENTEResult" type="tns:ZKSK_ELIMINA_DIRECC_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_ELIMINA_DIRECC_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_DIRECC_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creadirclteparam" type="tns:ZKSK_CREA_DIRECC_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_DIRECC_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_CALLE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_NUMERO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMP_DIR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_CIUDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_REGION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_DIRECC_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CREA_DIRECC_CLIENTEResult" type="tns:ZKSK_CREA_DIRECC_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_DIRECC_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_DIRECCION_ID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_ORGVTA" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_COMUNAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conscomunaparam" type="tns:ZKSK_CONSULTA_COMUNASParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_COMUNASParam" />
+      <s:element name="ZKSK_CONSULTA_COMUNASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_COMUNASResult" type="tns:ZKSK_CONSULTA_COMUNASRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_COMUNASRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_COMUNAS" type="tns:ArrayOfZKSK_COMUNAS" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_COMUNAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_COMUNAS" nillable="true" type="tns:ZKSK_COMUNAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_COMUNAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COMUNA_COD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COMUNA_TXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIUDAD_COD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CIUDAD_TXT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REGION_COD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="REGION_TXT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_CLI_RUT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="consclirutparam" type="tns:ZKSK_CONSULTA_CLI_RUTParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_CLI_RUTParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_RUT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_CLI_RUTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_CLI_RUTResult" type="tns:ZKSK_CONSULTA_CLI_RUTRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_CLI_RUTRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_CLIENTES" type="tns:ArrayOfZKSK_CLI_X_RUT" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_DIRECCIONES" type="tns:ArrayOfZKSK_DIR_CLIENTE_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_CLI_X_RUT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_CLI_X_RUT" nillable="true" type="tns:ZKSK_CLI_X_RUT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_CLI_X_RUT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL_FIJO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TEL_MOVIL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_VENTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="creaventaparam" type="tns:ZKSK_CREA_VENTAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_VENTAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CODCLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_PAGO_WEBPAY" type="tns:ZKSK_WEBPAY" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_DIRECCION_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_T_PRODUCTO" type="tns:ArrayOfZKSK_COMPRA_PRODUCTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_WEBPAY">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="COD_AUTORIZACION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NRO_TARJETA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MONTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FECHA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HORA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_CREDEB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UNIQUEID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NRO_CUOTAS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_PAGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_TRANSACCION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_COMPRA_PRODUCTOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_COMPRA_PRODUCTOS" nillable="true" type="tns:ZKSK_COMPRA_PRODUCTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_COMPRA_PRODUCTOS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CANTIDAD" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CREA_VENTAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CREA_VENTAResult" type="tns:ZKSK_CREA_VENTARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CREA_VENTARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_PEDIDO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_ENTREGA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_FACTURA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_SMCIA" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_PEDIDO_VALE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_ENTREGA_VALE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_FACTURA_VALE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_CODCLIENTE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_BUKRS_FACT" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="O_GJAHR_FACT" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_BELNR_FACT" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_BUKRS_WP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_GJAHR_WP" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_BELNR_WP" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ZKSK_CALCULA_CARRO_COMPRA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="calccarrocompraparam" type="tns:ZKSK_CALCULA_CARRO_COMPRAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CALCULA_CARRO_COMPRAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CODCLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_ORGVTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_T_PRODUCTO" type="tns:ArrayOfZKSK_COMPRA_PRODUCTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CALCULA_CARRO_COMPRAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CALCULA_CARRO_COMPRAResult" type="tns:ZKSK_CALCULA_CARRO_COMPRARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CALCULA_CARRO_COMPRARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_TOTAL_PRECIO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_TOTAL_DSCTO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_TOTAL_FLETE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_TOTAL_FINAL" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_CALCULO_CARRO" type="tns:ArrayOfZKSK_CONSULTA_PRECIO_CARRO" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_CONSULTA_PRECIO_CARRO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_CONSULTA_PRECIO_CARRO" nillable="true" type="tns:ZKSK_CONSULTA_PRECIO_CARRO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_CONSULTA_PRECIO_CARRO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANTIDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRECIO_UNIT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRECIO_LIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCUENTO_UNIT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCUENTO_LIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLETE_UNIT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLETE_LIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOTAL_LIN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_CARACTERISTICAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conscaractparam" type="tns:ZKSK_CONSULTA_CARACTERISTICASParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_CARACTERISTICASParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_PRODUCTO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_CARACTERISTICASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_CARACTERISTICASResult" type="tns:ZKSK_CONSULTA_CARACTERISTICASRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_CARACTERISTICASRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_CARACTERISTICAS" type="tns:ArrayOfZKSK_PROD_CARACT_RFC" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_PROD_CARACT_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_PROD_CARACT_RFC" nillable="true" type="tns:ZKSK_PROD_CARACT_RFC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_PROD_CARACT_RFC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="INDICE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CARACTERISTICA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALOR_CARACT" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRECIO_FLETE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conspreciofleteparam" type="tns:ZKSK_CONSULTA_PRECIO_FLETEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRECIO_FLETEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_ORGVTA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_COMUNA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_T_PRODUCTOS" type="tns:ArrayOfZKSK_COMPRA_PRODUCTOS" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_CONSULTA_PRECIO_FLETEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_CONSULTA_PRECIO_FLETEResult" type="tns:ZKSK_CONSULTA_PRECIO_FLETERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_CONSULTA_PRECIO_FLETERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="O_TOTAL_FLETE" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="O_T_VALOR_FLETE" type="tns:ArrayOfZKSK_PRECIO_FLETE" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfZKSK_PRECIO_FLETE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZKSK_PRECIO_FLETE" nillable="true" type="tns:ZKSK_PRECIO_FLETE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZKSK_PRECIO_FLETE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PRODUCTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CANTIDAD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALORFLETE_UNIT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VALORFLETE_LIN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MODIFICA_CLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modificaclteparam" type="tns:ZKSK_MODIFICA_CLIENTEParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MODIFICA_CLIENTEParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="I_CODCLIENTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="I_EMAIL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZKSK_MODIFICA_CLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZKSK_MODIFICA_CLIENTEResult" type="tns:ZKSK_MODIFICA_CLIENTERet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZKSK_MODIFICA_CLIENTERet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn" />
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ZKSK_CONSULTA_DIRECC_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_DIRECC_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_DIRECC_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_DIRECC_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_LOG_COMPRASSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_LOG_COMPRAS" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_LOG_COMPRASSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_LOG_COMPRASResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRECIOSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRECIO" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRECIOSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRECIOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRODUCTOSSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRODUCTOS" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRODUCTOSSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRODUCTOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_STOCKSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_STOCK" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_STOCKSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_STOCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_PROSPECTOSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_PROSPECTO" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_PROSPECTOSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_PROSPECTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MODIFICA_PROSPECTOSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_MODIFICA_PROSPECTO" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MODIFICA_PROSPECTOSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_MODIFICA_PROSPECTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_DATOS_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_DATOS_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_DATOS_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_DATOS_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MAIL_CONFIRMA_COMPRASoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_MAIL_CONFIRMA_COMPRA" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MAIL_CONFIRMA_COMPRASoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_MAIL_CONFIRMA_COMPRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MAIL_ORDEN_DESPACHOSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_MAIL_ORDEN_DESPACHO" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MAIL_ORDEN_DESPACHOSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_MAIL_ORDEN_DESPACHOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_ELIMINA_DIRECC_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_ELIMINA_DIRECC_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_ELIMINA_DIRECC_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_ELIMINA_DIRECC_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_DIRECC_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_DIRECC_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_DIRECC_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_DIRECC_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_COMUNASSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_COMUNAS" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_COMUNASSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_COMUNASResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_CLI_RUTSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_CLI_RUT" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_CLI_RUTSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_CLI_RUTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_VENTASoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_VENTA" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CREA_VENTASoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CREA_VENTAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CALCULA_CARRO_COMPRASoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CALCULA_CARRO_COMPRA" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CALCULA_CARRO_COMPRASoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CALCULA_CARRO_COMPRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_CARACTERISTICASSoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_CARACTERISTICAS" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_CARACTERISTICASSoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_CARACTERISTICASResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRECIO_FLETESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRECIO_FLETE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_CONSULTA_PRECIO_FLETESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_CONSULTA_PRECIO_FLETEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MODIFICA_CLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:ZKSK_MODIFICA_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZKSK_MODIFICA_CLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:ZKSK_MODIFICA_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SrvGCOkskSoap">
+    <wsdl:operation name="ZKSK_CONSULTA_DIRECC_CLIENTE">
+      <wsdl:input message="tns:ZKSK_CONSULTA_DIRECC_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_DIRECC_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_LOG_COMPRAS">
+      <wsdl:input message="tns:ZKSK_CONSULTA_LOG_COMPRASSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_LOG_COMPRASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO">
+      <wsdl:input message="tns:ZKSK_CONSULTA_PRECIOSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_PRECIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRODUCTOS">
+      <wsdl:input message="tns:ZKSK_CONSULTA_PRODUCTOSSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_PRODUCTOSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_STOCK">
+      <wsdl:input message="tns:ZKSK_CONSULTA_STOCKSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_STOCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_CLIENTE">
+      <wsdl:input message="tns:ZKSK_CREA_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_CREA_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_PROSPECTO">
+      <wsdl:input message="tns:ZKSK_CREA_PROSPECTOSoapIn" />
+      <wsdl:output message="tns:ZKSK_CREA_PROSPECTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_PROSPECTO">
+      <wsdl:input message="tns:ZKSK_MODIFICA_PROSPECTOSoapIn" />
+      <wsdl:output message="tns:ZKSK_MODIFICA_PROSPECTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_DATOS_CLIENTE">
+      <wsdl:input message="tns:ZKSK_CONSULTA_DATOS_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_DATOS_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_CONFIRMA_COMPRA">
+      <wsdl:input message="tns:ZKSK_MAIL_CONFIRMA_COMPRASoapIn" />
+      <wsdl:output message="tns:ZKSK_MAIL_CONFIRMA_COMPRASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_ORDEN_DESPACHO">
+      <wsdl:input message="tns:ZKSK_MAIL_ORDEN_DESPACHOSoapIn" />
+      <wsdl:output message="tns:ZKSK_MAIL_ORDEN_DESPACHOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_ELIMINA_DIRECC_CLIENTE">
+      <wsdl:input message="tns:ZKSK_ELIMINA_DIRECC_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_ELIMINA_DIRECC_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_DIRECC_CLIENTE">
+      <wsdl:input message="tns:ZKSK_CREA_DIRECC_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_CREA_DIRECC_CLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_COMUNAS">
+      <wsdl:input message="tns:ZKSK_CONSULTA_COMUNASSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_COMUNASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CLI_RUT">
+      <wsdl:input message="tns:ZKSK_CONSULTA_CLI_RUTSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_CLI_RUTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_VENTA">
+      <wsdl:input message="tns:ZKSK_CREA_VENTASoapIn" />
+      <wsdl:output message="tns:ZKSK_CREA_VENTASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CALCULA_CARRO_COMPRA">
+      <wsdl:input message="tns:ZKSK_CALCULA_CARRO_COMPRASoapIn" />
+      <wsdl:output message="tns:ZKSK_CALCULA_CARRO_COMPRASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CARACTERISTICAS">
+      <wsdl:input message="tns:ZKSK_CONSULTA_CARACTERISTICASSoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_CARACTERISTICASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO_FLETE">
+      <wsdl:input message="tns:ZKSK_CONSULTA_PRECIO_FLETESoapIn" />
+      <wsdl:output message="tns:ZKSK_CONSULTA_PRECIO_FLETESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_CLIENTE">
+      <wsdl:input message="tns:ZKSK_MODIFICA_CLIENTESoapIn" />
+      <wsdl:output message="tns:ZKSK_MODIFICA_CLIENTESoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SrvGCOkskSoap" type="tns:SrvGCOkskSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZKSK_CONSULTA_DIRECC_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_LOG_COMPRAS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRODUCTOS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRODUCTOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_STOCK">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_STOCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_PROSPECTO">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_PROSPECTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_PROSPECTO">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_PROSPECTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_DATOS_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_CONFIRMA_COMPRA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_ORDEN_DESPACHO">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_ELIMINA_DIRECC_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_DIRECC_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_COMUNAS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_COMUNAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CLI_RUT">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CLI_RUT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_VENTA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_VENTA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CALCULA_CARRO_COMPRA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CARACTERISTICAS">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO_FLETE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_CLIENTE">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SrvGCOkskSoap12" type="tns:SrvGCOkskSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZKSK_CONSULTA_DIRECC_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_LOG_COMPRAS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRODUCTOS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRODUCTOS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_STOCK">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_STOCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_PROSPECTO">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_PROSPECTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_PROSPECTO">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_PROSPECTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_DATOS_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_CONFIRMA_COMPRA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MAIL_ORDEN_DESPACHO">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_ELIMINA_DIRECC_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_DIRECC_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_COMUNAS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_COMUNAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CLI_RUT">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CLI_RUT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CREA_VENTA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_VENTA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CALCULA_CARRO_COMPRA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_CARACTERISTICAS">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_CONSULTA_PRECIO_FLETE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZKSK_MODIFICA_CLIENTE">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_CLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SrvGCOksk">
+    <wsdl:port name="SrvGCOkskSoap" binding="tns:SrvGCOkskSoap">
+      <soap:address location="http://smtp.gasco.cl/WSGasco/WSKSK/SrvGCOksk.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SrvGCOkskSoap12" binding="tns:SrvGCOkskSoap12">
+      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSKSK/SrvGCOksk.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

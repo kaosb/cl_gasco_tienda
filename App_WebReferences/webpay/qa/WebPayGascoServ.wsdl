@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/">
+      <s:element name="GetDataExito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idsession" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataExitoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataExitoResult" type="tns:TBKDataExito" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TBKDataExito">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSession" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="GId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Num_Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="urlrequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="urlexito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="urlfracaso" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoTransaccion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTransaccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaServidor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cod_Autoriza" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cuotas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TBK_MONTO" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TBK_FINAL_NUMERO_TARJETA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TBK_ORDEN_COMPRA" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_FECHA_TRANSACCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_HORA_TRANSACCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_TIPO_TRANSACCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_TIPO_PAGO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TBK_TIPO_PAGO_GLOSA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoTransaccionGlosa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVentaProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idsession" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVentaProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVentaProductoResult" type="tns:ArrayOfTBKProducto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTBKProducto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TBKProducto" nillable="true" type="tns:TBKProducto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TBKProducto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTBKSession" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoProducto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAplicado" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDataExitoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataExito" />
+  </wsdl:message>
+  <wsdl:message name="GetDataExitoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataExitoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVentaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVentaProducto" />
+  </wsdl:message>
+  <wsdl:message name="GetVentaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVentaProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebPayGascoServSoap">
+    <wsdl:operation name="GetDataExito">
+      <wsdl:input message="tns:GetDataExitoSoapIn" />
+      <wsdl:output message="tns:GetDataExitoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaProducto">
+      <wsdl:input message="tns:GetVentaProductoSoapIn" />
+      <wsdl:output message="tns:GetVentaProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebPayGascoServSoap" type="tns:WebPayGascoServSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDataExito">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/GetDataExito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaProducto">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/GetVentaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebPayGascoServSoap12" type="tns:WebPayGascoServSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDataExito">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/GetDataExito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVentaProducto">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/GetVentaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebPayGascoServ">
+    <wsdl:port name="WebPayGascoServSoap" binding="tns:WebPayGascoServSoap">
+      <soap:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/WebPayGascoServ.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebPayGascoServSoap12" binding="tns:WebPayGascoServSoap12">
+      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/WebPayGascoServ.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

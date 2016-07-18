@@ -1,0 +1,1240 @@
+﻿*
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background-color:#ff0015;
+}
+.dotted
+{
+    background-image:url(img/bgtramadot.png);
+    background-position:center center;
+    background-repeat:repeat-y;
+    width:100%;
+    background-color:#ffffff;
+}
+.homeinfolinks
+{
+    width:960px;
+    height:128px;
+    background-image:url(img/mp_homeinfo.png);
+    margin:20px 0px;
+    position:relative;
+}
+.homeinfolinks .li1
+{
+}
+.topmenubar
+{
+    position:absolute;
+    top:9px;
+    left:50%;
+    margin-left:200px;
+    background-image:url(img/mp_topmenu.png);
+    width:288px;
+    height:38px;
+    z-index:15;
+    color:#5e6d81;
+    font-family:Arial;
+}
+.topmenubar input[type=text]
+{
+    background-color:transparent;
+    margin:10px;
+    color:#5e6d81;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.cartcount
+{
+    position:absolute;
+    top:10px;
+    right:45px;
+    font-size:15px;
+    font-weight:bold;
+}
+.mp_searchbtn
+{
+    position:absolute;
+    top:10px;
+    left:180px;
+}
+.mp_cartbtn
+{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.home_topLine
+{
+    width: 100%;
+    height: 10px;
+    background-image: url(img/mp_topline.png);
+    position: absolute;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    left:0px;
+}
+
+.home_header
+{
+    width: 960px;
+    height: 85px;
+    position: relative;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index:10;
+}
+
+.home_bottomLine
+{
+    width: 100%;
+    height: 138px;
+    background-image: url(img/mp_bottomline.jpg);
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
+.home_logo
+{
+    position: relative;
+    float: left;
+    background-image: url(img/mp_logogasco.png);
+    width: 389px;
+    height: 67px;
+}
+
+.main-navbtn
+{
+    width: 960px;
+    position: relative;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.main-content
+{
+    width: 960px;
+    position: relative;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+.lbox-home
+{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:100;
+    background-image:url(img/gray_bg.gif);
+}
+.lbox-despacho
+{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:618px;
+    height:317px;
+    margin:-159px 0px 0px -309px;
+    background-image:url(img/calen_bgdespachot.png);
+    z-index:150;
+}
+.lbox-closebtn
+{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.lbox-ddlcomuna
+{
+    position:absolute;
+    top:105px;
+    left:25px;
+    width:160px;
+    height:20px;
+    font: 12px Arial;
+    color:#5e6d81;
+    border:1px solid #5e6d81;
+}
+.lbox-btncalcula
+{
+    position:absolute;
+    top:105px;
+    left:200px;
+    cursor:not-allowed;
+}
+.lbox-ddlcomuna *
+{
+    font: 12px Arial;
+    color:#5e6d81;
+}
+.lbox-valordesp
+{
+    position:absolute;
+    top:100px;
+    left:310px;
+    font: 12px Arial;
+    color:#5e6d81;
+}
+.desp1
+{
+    font-size:18px;
+    color:#484848;
+}
+.desp2
+{
+    font-size:22px;
+    color:#dc0a0a;
+    font-weight:bold;
+    margin-left:10px;
+}
+.calendariodespacho
+{
+    position:absolute;
+    bottom:53px;
+    left:20px;
+    width:590px;
+    height:70px;
+    background-color:#ffffff;
+    background-image:url(img/calen_bgleft.png);
+    background-repeat:no-repeat;
+}
+.calendario_terminos
+{
+    position:absolute;
+    left:20px;
+    bottom:10px;
+    width:138px;
+    height:13px;
+}
+.calendariodespacho div
+{
+    position:relative;
+    float:left;
+    font:11px Arial;
+}
+.cal-relleno
+{
+    height:35px;
+    width:80px;
+}
+.cal-inactive
+{
+    background-image:url(img/calen_bg-1.png);
+    width:70px;
+    height:23px;
+    padding-top:10px;
+    margin:1px 1px 1px 1px;
+    color:#687688;
+    text-align:center;
+    text-transform:uppercase;
+}
+.cal-active
+{
+    background-image:url(img/calen_bg-2.png);
+    width:70px;
+    height:23px;
+    padding-top:10px;
+    margin:1px 1px 1px 1px;
+    color:#ffffff;
+    text-align:center;
+    text-transform:uppercase;
+}
+.tramatran
+{
+    background-color:transparent;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    z-index:1000;
+}
+.loader
+{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:64px;
+    height:64px;
+    margin:-32px 0px 0px -32px;
+    z-index:1010;
+}
+.leftPanel
+{
+    width: 160px;
+    position: relative;
+    float: left;
+    min-height:10px;
+    font: 12px Arial;
+    color:#5e6d81;
+}
+.leftsearch *
+{
+    text-decoration:none;
+    color:#5e6d81;
+    font-size:11px;
+}
+.mp-smallsep
+{
+    clear:both;
+    width:160px;
+    height:1px;
+    background-image:url(img/mp_smallsepar.png);
+    margin:2px;
+}
+.rightPanel
+{
+    width: 795px;
+    position: relative;
+    float: left;
+    min-height:400px;
+}
+
+.footertext
+{
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    width: 388px;
+    height: 27px;
+    text-align:right;
+    color:#ffffff;
+    font-size:10px;
+    font-family:Arial;
+    font-weight:bold;
+}
+.footertext a, .footertext a:visited
+{
+    text-decoration:none;
+    color:#ffffff;
+    font-family:Arial;
+}
+
+.topbtn
+{
+    height: 24px;
+    overflow: hidden;
+}
+
+.main-navsc
+{
+    width: 960px;
+    height: 32px;
+    position: relative;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    background-image: url(img/mp_subcatbg.png);
+    overflow: hidden;
+}
+
+.main-navsr
+{
+    width: 960px;
+    height: 32px;
+    position: relative;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    background-image: url(img/mp_subcatbg2.png);
+    overflow: hidden;
+}
+
+.scitem1
+{
+    position: relative;
+    float: left;
+}
+
+.scitem2
+{
+    position: relative;
+    float: left;
+    margin-left: 1px;
+}
+.bottomtel img
+{
+    position:absolute;
+    bottom:0px;
+}
+.productos-pricebox #added
+{
+    width:309px;
+    height:89px;
+    background-image:url(img/alerta-producto-agregado.png);
+    display:none;
+    position:absolute;
+    top:170px;
+    left:-56px;
+}
+#added .vercarro
+{
+    position:absolute;
+    bottom:13px;
+    left:16px;
+    width:115px;
+    height:29px;
+}
+#added .closeme
+{
+    cursor:pointer;
+    position:absolute;
+    bottom:13px;
+    right:15px;
+    width:155px;
+    height:29px;
+}
+.productos-breadcrumb
+{
+    margin-top:20px;
+}
+.productos-breadcrumb a, .productos-breadcrumb a:visited
+{
+    text-decoration:none;
+    /*font-style:italic;*/
+    text-transform:capitalize;
+    color:#5e6d81;
+}
+.current-bc a:visited, .current-bc a
+{
+    color:#ea2034;
+}
+.productos-stock
+{
+    position:relative;
+    top:0px;
+    padding-left:60px;
+}
+.productos-tp
+{
+    color:#5e6d81;
+    font-size:18px;
+    margin-left:15px;
+    margin-top:40px;
+}
+.productos-precio
+{
+    color:#ea2034;
+    font-size:42px;
+    text-align:right;
+    margin-top:-10px;
+}
+.productos-title
+{
+    font-size:26px;
+    text-transform:uppercase;
+}
+.productoscola
+{
+    position:relative;
+    float:left;
+    width:270px;
+}
+.productoscolb
+{
+    position:relative;
+    float:left;
+    width:330px;
+    min-height:300px;
+}
+.productoscolb *
+{
+    margin:10px;
+}
+.productoscolc
+{
+    position:relative;
+    float:left;
+    width:200px;
+}
+.productosvsepar
+{
+    position:relative;
+    float:left;
+    width:1px;
+    background-image:url(img/prod_vsepar.png);
+    min-height: 400px;
+}
+.productos-img
+{
+    background-image:url(img/prod_imgborder.png);
+    width:219px;
+    height:230px;
+    margin: 10px auto;
+    position:relative;
+}
+.productos-img #displayimg
+{
+    left:20px;
+    max-height:190px;
+    align-content:center;
+}
+.promo
+{
+    color:#ea2034;
+    font-weight:bold;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.promocion
+{
+    width:230px;
+    overflow:hidden;
+    background-repeat:no-repeat;
+    margin:15px;background-image:url(img/promo_arr.png);
+    padding-left:30px;
+}
+.promocion .p1
+{
+    width:230px;
+    height:3px;
+    
+}
+.promocion .p2
+{
+    width:230px;
+    padding:5px 0px;
+    font-weight:bold;
+}
+.promocion .p3
+{
+    width:230px;
+    height:3px;
+    
+}
+#gal1
+{
+    position:relative;
+    width:219px;
+    margin:10px auto;
+}
+.productos-thumb
+{
+    width:48px;
+    background-image:url(img/productos_thumb_bg.png);
+    height:40px;
+    margin-right:6px;
+    position:relative;
+    float:left;
+    text-align:center;
+}
+.productos-thumb .active img
+{
+    border:1px solid #333 !important;
+}
+.productos-imgmask
+{
+    position:relative;
+    width:171px;
+    height:190px;
+    overflow:hidden;
+    top:20px;
+    left:25px;
+}
+.productos-btndespacho
+{
+    position:absolute;
+    bottom:10px;
+    left:30px;
+}
+.productos-pricebox
+{
+    height:200px;
+    position:relative;
+}
+.productos, .carrodecompras
+{
+    font: 12px Arial;
+    color:#5e6d81;
+}
+.botcaracteristicas
+{
+    position:relative;
+    height:60px;
+    clear:both;
+}
+.carrosepar
+{
+    width:327px;height:7px;background-color:#dedede;position:relative;margin:10px 0;
+}
+.carro-nueva-direccion
+{
+    position:relative;
+    border: 1px solid #e5e5e5;
+    width:730px;
+    height:105px;
+    padding-left:20px;
+    padding-top:20px;
+    margin:10px 0px;
+    background-color:#f7f7f7;
+
+}
+.carro-nueva-direccion div
+{
+    position:relative;
+    
+}
+.carro-nueva-direccion input[type=text], .carro-nueva-direccion select
+{
+    border: 1px solid #A5B4C8;
+    color:#5e6d81;
+}
+
+.carro-headp
+{
+    position:relative;
+    width:750px;
+    height:24px;
+    background-image:url(img/carro_head_producto.png);
+    left:15px;
+}
+.carro-itemp
+{
+    position:relative;
+    width:750px;
+    left:0px;
+    clear:both;
+    /*background-color:#e5e5e5;*/
+    background-color:#e5e5e5;
+    height:50px;
+}
+.carro-itemp div
+{
+    position:relative;
+    float:left;
+    background-color:#ffffff;
+    height:49px;
+    margin-left:1px;
+}
+.carro-r1
+{
+    width:50px;
+}
+.carro-r2
+{
+    width:50px;
+}
+.carro-r3
+{
+    width:66px;
+}
+.carro-r4
+{
+    width:198px;
+}
+.carro-r5
+{
+    width:143px;
+}
+.carro-r6
+{
+    width:52px;
+}
+.carro-r7
+{
+    width:184px;
+}
+.carro-itemd div
+{
+    position:relative;
+    float:left;
+}
+.carro-rd1
+{
+    background-color:#f7f7f7;
+    font-size:14px;
+    text-transform:uppercase;
+    height:30px;
+    padding-top:15px;
+    padding-left:20px;
+    width:730px;
+    border:1px solid #e5e5e5;
+}
+.carro-rd2
+{
+    width:0px;
+}
+.carro-rd3
+{
+    width:0px;
+}
+.carro-preciot
+{
+    color:#ea2034;
+    font-size:20px;
+    text-align:right;
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    font-weight:bold;
+}
+.carro-preciou
+{
+    font-size:16px;
+    text-align:right;
+    position:absolute;
+    bottom:15px;
+    right:10px;
+}
+.carro-producto
+{
+    text-align:left;
+    position:absolute;
+    top:10px;
+    left:10px;
+    text-transform:capitalize;
+}
+.carro-btn
+{
+    position:absolute;
+    left:5px;
+    bottom:5px;
+}
+.carro-img
+{
+    position:absolute;
+    left:24px;
+    bottom:6px;
+}
+.carro_txtcantidad
+{
+    background-image:url(img/carro_bg_cantidad.png);
+    width:37px;
+    height:24px;
+    text-align:center;
+    margin:13px 10px;
+    color:#5E6D81;
+}
+.carro-Total
+{
+    background-image:url(img/carro_bg_total.png);
+    width:440px;
+    height:68px;
+    top:15px;
+    left:15px;
+    margin-bottom:10px;
+    position:relative;
+}
+.carro-subt
+{
+    color: #5E6D81;
+    font-size: 14px;
+    text-align:right;
+    font-weight:bold;
+    margin-right:30px;
+    font-family:Arial;
+}
+.carro
+{
+    width:810px;
+    position:relative;
+}
+.carro-Total span
+{
+    position:absolute;
+    bottom:5px;
+    text-align:right;
+}
+.carro-des1
+{
+    right:295px;
+    font-size:16px;
+}
+.carro-des2
+{
+    right:172px;
+    font-size:16px;
+}
+.carro-des3
+{
+    right:10px;
+    font-weight:bold;
+    color:#EA2034;
+    font-size:20px;
+}
+.carronl-left
+{
+    position:relative;
+    float:left;
+    width:300px;
+    padding:30px;
+    height:150px;
+    font-family:Arial;
+    font-size:12px;
+    color:#5e5e5e;
+}
+.carronl-left input[type=text]
+{
+    border: 1px solid #A5B4C8;
+}
+.carronl-right
+{
+    position:relative;
+    float:left;
+    width:300px;
+    padding:30px;
+    height:150px;
+    font-family:Arial;
+    font-size:12px;
+    color:#5e5e5e;
+}
+.carronl-right a
+{
+    position:absolute;
+    bottom:37px;
+}
+.cat-contgeneral
+{
+    position:relative;
+    width:740px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.cat-cont
+{
+    position:relative;
+    float:left;
+    width:210px;
+    margin:10px;
+    height:210px;
+}
+.cat-contimg
+{
+    border:1px solid #e5e5e5;
+    margin:5px;
+    position:relative;
+}
+.cat-contimg img
+{
+    width:80px;
+    margin:10px;
+    z-index:1;
+}
+.cont-precio
+{
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:87px;
+    height:19px;
+    background-image:url(img/categoria-preciobg.png);
+    color:#ffffff;
+    text-align:right;
+    font-family:Arial;
+    font-size:16px;
+    font-weight:bold;
+    z-index:10;
+    padding:2px 5px;
+    text-decoration:none;
+}
+.cat-titulo
+{
+    font-weight:bold;
+    width:210px;
+    height:20px;
+    overflow:hidden;
+}
+.cat-breadcrumb
+{
+    text-transform:capitalize;
+}
+.int-separ
+{
+    height:1px;
+    width:99%;
+    background-image:url(img/int_separ.png);
+    margin:5px auto;
+    position:relative;
+    clear:both;
+}
+.separ_big
+{
+    background-image: url(img/mp_separ.png);
+    width: 960px;
+    height: 1px;
+    background-position: center center;
+    clear: both;
+    margin: 0px auto 0px auto;
+}
+
+.cb
+{
+    clear: both;
+}
+.despacho-cont
+{
+    width:760px;
+    position:relative;
+    left:10px;
+    color:#7d7d7d;
+}
+.despacho-contcal
+{
+    position:relative;
+    left:60px;
+    top:10px;
+    width:610px;
+    height:110px;
+    background-image:url(img/despacho-bgcalendario.png);
+}
+.despacho-cuadrodatos
+{
+    border:1px solid #EAEAEA;
+    width:580px;
+    padding:5px;
+    position:relative;
+    left:20px;
+    top:10px;
+    margin-bottom:10px;
+}
+.despacho-rowdatos
+{
+    position: relative;
+    float: left;
+    width: 200px;
+}
+.subtitle
+{
+    color:#5e6d81;
+    font-size:14px;
+}
+.instalaciones-col
+{
+    position:relative;
+    float:left;
+    width:280px;
+    margin-left:40px;
+}
+.instalaciones-col .subtitle
+{
+    margin: 15px 0px 10px 0px;
+}
+.instalaciones-col a, instalaciones-col a:visited, .instalaciones-tecnico a, instalaciones-tecnico a:visited
+{
+    color:#7D7D7D;
+    text-decoration:none;
+}
+.instalaciones-tecnico
+{
+    position:relative;
+    float:left;
+}
+    .instalaciones-tecnico .subtitle
+    {
+        height:40px;
+    }
+.instalaciones-seph
+{
+    position:relative;
+    float:left;
+    width:100%;
+    height:1px;
+    background-color:#cccccc;
+    margin:10px 0px;
+}
+.instalaciones-sep
+{
+    position:relative;
+    float:left;
+    width:1px;
+    height:170px;
+    background-color:#cccccc;
+    margin:0 10px;
+}
+.mediospago-cola
+{
+    position:relative;
+    float:left;
+    width:470px;
+}
+.mediospago-colb
+{
+    position:relative;
+    float:left;
+    width:270px;
+}
+.faq-bg1
+{
+    width:611px;
+    height:9px;
+    /*background-image:url(img/faq-respbg1.png);*/
+    margin-top:10px;
+}
+.faq-bg2
+{
+    width:611px;
+    /*background-image:url(img/faq-respbg2.png);*/
+}
+.faq-bg2 p
+{
+    padding:5px 20px;
+}
+.faq-bg3
+{
+    width:611px;
+    height:9px;
+    /*background-image:url(img/faq-respbg3.png);*/
+}
+#accordion
+{
+    min-height:600px;
+}
+#accordion h2
+{
+    font-size:18px;
+    margin:5px 0px;
+}
+#accordion h3
+{
+    margin:5px;
+    text-transform:none;
+    font-size:12px;
+}
+.consejos-t1
+{
+    position:relative;
+    width:788px;
+    height:46px;
+    background-image:url(img/consejos-t1.png);
+    cursor:pointer;
+}
+.consejoscon1, .consejoscon2, .consejoscon3, .consejoscon4
+{
+    display:none;
+    position:relative;
+}
+.consejos-t1a
+{
+    position:relative;
+    width:788px;
+    height:46px;
+    background-image:url(img/consejos-t10.png);
+    cursor:pointer;
+}
+.consejos-t2
+{
+    position:relative;
+    width:788px;
+    height:46px;
+    background-image:url(img/consejos-t2.png);
+    cursor:pointer;
+}
+.consejos-t2a
+{
+    position:relative;
+    width:788px;
+    height:46px;
+    background-image:url(img/consejos-t20.png);
+    cursor:pointer;
+}
+.consejosrow
+{
+    position:relative;
+    float:left;
+    margin-left:1px;
+}
+.contacto-p1
+{
+    width:690px;
+    height:28px;
+    background-image:url(img/contacto_bg1.png)
+}
+.contacto-p2
+{
+    width:690px;
+    background-image:url(img/contacto_bg2.png)
+}
+.contacto-p3
+{
+    width:690px;
+    height:28px;
+    background-image:url(img/contacto_bg3.png)
+}
+.contacto-titulo
+{
+    color:#0fa2ff;
+    font-size:22px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+.contacto-cont
+{
+    width:620px;
+    margin:0px 35px;
+}
+.contacto-p
+{
+    font-size:13px;
+}
+.reqfield
+{
+    color:#0fa2ff;
+    font-weight:bold;
+    padding:2px;
+}
+.contacto-row
+{
+    position:relative;
+    width:100%;
+    text-align:right;
+}
+.contacto-name
+{
+    width:110px;
+}
+.contacto-row p
+{
+    position:relative;
+    float:left;
+    margin: 0px 15px 25px 0px;
+}
+.contacto-row select, .contacto-row input[type=text], .contacto-row span, .contacto-row textarea
+{
+    position:relative;
+    float:left;
+    border-radius: 2px;
+    border:1px solid #CDCDCD;
+    min-width:160px;
+    color:#4D4D4D;
+    min-height:23px;
+    resize:none;
+}
+.contacto-row input[type=image]
+{
+    margin:33px;
+}
+.terminos-box1
+{
+    width: 720px;
+    border: 1px solid #5e6d81;
+    margin: 15px;
+}
+.terminos-row1
+{
+    position: relative;
+    float: left;
+    width: 220px;
+    margin: 15px;
+}
+.terminos-row2
+{
+    position: relative;
+    float: left;
+    width: 190px;
+    margin: 15px;
+}
+.terminos-box1 p
+{
+    color:#e2001a;
+    font-size:12px;
+    margin:3px;
+    font-weight:bold;
+    
+}
+.terminos-box1 a, .terminos-box1 a:visited
+{
+    text-decoration:none;
+    color:#0fa2ff;
+    font-size:12px;
+    font-weight:bold;
+}
+.terminos-titulo
+{
+    color:#5e6d81;
+    font-size:18px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin:20px 15px 10px 15px;
+}
+.terminos-subtitulo
+{
+    color:#5e6d81;
+    font-size:14px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin:20px 15px 10px 15px;
+}
+.terminos-text
+{
+    margin:5px 15px;
+}
+.terminos-imagen img
+{
+    margin-top:15px;
+}
+.terminos-piefoto
+{
+    text-align:center;
+    margin:10px;
+}
+.fracaso_cont
+{
+    position:relative;
+    width:600px;
+    padding:40px;
+    text-align:center;
+    margin:40px;
+    border:1px solid #bdbdbd;
+    font-family:Arial;
+}
+.fracaso-titulo
+{
+    color:#0fa2ff;
+    font-size:24px;
+    font-weight:bold;
+}
+.fracaso-texto
+{
+    margin-top:20px;
+    color:#6c6c6c;
+    font-size:17px;
+}
+.fracaso_cont img
+{
+    margin-top:20px;
+}
+
+.iva_incluido{
+    font-size:14px;
+    font-weight:bold;
+    float:right;
+    margin-top:-5px;
+    color:red;
+}
+
+#ctl00_ContentPlaceHolder1_txtCCRut{
+    margin-left:20px;
+}
+
+#ctl00_ContentPlaceHolder1_ibIngresar{
+    margin-left:56px;
+}
+
+#btns_faq{margin-top:15px;}
+.faq_general{display:block;height:75px;width:197px;background-image:url(img/faq_inactivos_01.jpg);cursor:pointer;float:left;}
+.faq_compra{display:block;height:75px;width:197px;background-image:url(img/faq_inactivos_02.jpg);cursor:pointer;float:left;}
+.faq_despacho{display:block;height:75px;width:197px;background-image:url(img/faq_inactivos_03.jpg);cursor:pointer;float:left;}
+.faq_instalacion{display:block;height:75px;width:197px;background-image:url(img/faq_inactivos_04.jpg);cursor:pointer;float:left;}
+
+.faq_general.activo, .faq_general:hover{background-position:0 -75px;}
+.faq_compra.activo, .faq_compra:hover{background-position:0 -75px;}
+.faq_despacho.activo, .faq_despacho:hover{background-position:0 -75px;}
+.faq_instalacion.activo, .faq_instalacion:hover{background-position:0 -75px;}
+
+#faqCompra{display:none;}
+#faqDespacho{display:none;}
+#faqInstalacion{display:none;}

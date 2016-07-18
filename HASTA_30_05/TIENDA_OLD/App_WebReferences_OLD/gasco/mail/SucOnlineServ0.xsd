@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://smtp.gasco.cl/WSGascoWCF/WSSucOnline/SucOnlineServ.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Gasco.DataType" />
+  <xs:complexType name="MailMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HtmlContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUBJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MailMessage" nillable="true" type="tns:MailMessage" />
+  <xs:complexType name="MailMessageRetorno">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Gasco.DataType" base="q1:RetornoStandard">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MailMessageRetorno" nillable="true" type="tns:MailMessageRetorno" />
+</xs:schema>
