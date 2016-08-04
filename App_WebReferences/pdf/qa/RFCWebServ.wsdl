@@ -390,6 +390,90 @@
           <s:element minOccurs="0" maxOccurs="1" name="FVHASTA" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GETFEBOLETA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feboletaparam" type="tns:GETFEBOLETAParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GETFEBOLETAParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SistemaOrigen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vkorg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Binary" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GETFEBOLETAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GETFEBOLETAResult" type="tns:GETFEBOLETARet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GETFEBOLETARet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="PDFDATA" type="s:base64Binary" />
+              <s:element minOccurs="0" maxOccurs="1" name="PDFUrl" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DataBoleta" type="tns:DupBoletaData" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="DupBoletaData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoOperacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVencimiento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoFacturado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MontoPago" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarifa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Arriendo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoEquipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ruta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comuna" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fono" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZFEAZ_GETURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="zzfeaz_geturlparam" type="tns:ZZFEAZ_GETURLParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZFEAZ_GETURLParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VBELN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INDFONDO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ZZFEAZ_GETURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZZFEAZ_GETURLResult" type="tns:ZZFEAZ_GETURLRet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ZZFEAZ_GETURLRet">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:RFCReturn">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
       <s:element name="ZZFEAZ_GETPDF">
         <s:complexType>
           <s:sequence>
@@ -733,6 +817,18 @@
   <wsdl:message name="ZZRFCWEB_GETRECUPRECIOSoapOut">
     <wsdl:part name="parameters" element="tns:ZZRFCWEB_GETRECUPRECIOResponse" />
   </wsdl:message>
+  <wsdl:message name="GETFEBOLETASoapIn">
+    <wsdl:part name="parameters" element="tns:GETFEBOLETA" />
+  </wsdl:message>
+  <wsdl:message name="GETFEBOLETASoapOut">
+    <wsdl:part name="parameters" element="tns:GETFEBOLETAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZZFEAZ_GETURLSoapIn">
+    <wsdl:part name="parameters" element="tns:ZZFEAZ_GETURL" />
+  </wsdl:message>
+  <wsdl:message name="ZZFEAZ_GETURLSoapOut">
+    <wsdl:part name="parameters" element="tns:ZZFEAZ_GETURLResponse" />
+  </wsdl:message>
   <wsdl:message name="ZZFEAZ_GETPDFSoapIn">
     <wsdl:part name="parameters" element="tns:ZZFEAZ_GETPDF" />
   </wsdl:message>
@@ -817,6 +913,15 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega un precio referencial por comuna para venta web</wsdl:documentation>
       <wsdl:input message="tns:ZZRFCWEB_GETRECUPRECIOSoapIn" />
       <wsdl:output message="tns:ZZRFCWEB_GETRECUPRECIOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GETFEBOLETA">
+      <wsdl:input message="tns:GETFEBOLETASoapIn" />
+      <wsdl:output message="tns:GETFEBOLETASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega url de almacenamiento de un DTE</wsdl:documentation>
+      <wsdl:input message="tns:ZZFEAZ_GETURLSoapIn" />
+      <wsdl:output message="tns:ZZFEAZ_GETURLSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="ZZFEAZ_GETPDF">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega DTE en binario</wsdl:documentation>
@@ -909,6 +1014,24 @@
     </wsdl:operation>
     <wsdl:operation name="ZZRFCWEB_GETRECUPRECIO">
       <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETRECUPRECIO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETFEBOLETA">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GETFEBOLETA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETURL">
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZFEAZ_GETURL" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1047,6 +1170,24 @@
     </wsdl:operation>
     <wsdl:operation name="ZZRFCWEB_GETRECUPRECIO">
       <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZRFCWEB_GETRECUPRECIO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GETFEBOLETA">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/GETFEBOLETA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZZFEAZ_GETURL">
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/RFCWeb/ZZFEAZ_GETURL" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

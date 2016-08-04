@@ -141,10 +141,10 @@
   </wsdl:binding>
   <wsdl:service name="WebPayGascoServ">
     <wsdl:port name="WebPayGascoServSoap" binding="tns:WebPayGascoServSoap">
-      <soap:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/WebPayGascoServ.asmx" />
+      <soap:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGascoTest/WebPayGascoServ.asmx" />
     </wsdl:port>
     <wsdl:port name="WebPayGascoServSoap12" binding="tns:WebPayGascoServSoap12">
-      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGasco/WebPayGascoServ.asmx" />
+      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSWebPayGascoTest/WebPayGascoServ.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

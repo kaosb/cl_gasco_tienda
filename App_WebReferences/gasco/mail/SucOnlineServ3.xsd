@@ -1,48 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://smtp.gasco.cl/WSGascoWCF/WSSucOnline/SucOnlineServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SucOnlineDataType" />
-  <xs:import schemaLocation="http://smtp.gasco.cl/WSGascoWCF/WSSucOnline/SucOnlineServ.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" />
-  <xs:element name="GetSaldoAnterior">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SucOnlineDataType" minOccurs="0" name="param" nillable="true" type="q1:SaldoAnteriorParam" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSaldoAnteriorResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SucOnlineDataType" minOccurs="0" name="GetSaldoAnteriorResult" nillable="true" type="q2:SaldoAnterior" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSaldoAnteriorMag">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SucOnlineDataType" minOccurs="0" name="param" nillable="true" type="q3:SaldoAnteriorParam" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetSaldoAnteriorMagResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SucOnlineDataType" minOccurs="0" name="GetSaldoAnteriorMagResult" nillable="true" type="q4:SaldoAnterior" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SendMail">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" minOccurs="0" name="mailparam" nillable="true" type="q5:MailMessage" />
-        <xs:element minOccurs="0" name="stringverificacion" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SendMailResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" minOccurs="0" name="SendMailResult" nillable="true" type="q6:MailMessageRetorno" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Gasco.DataType.SucOnline" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://smtp.gasco.cl/WSGascoWCF/WSSucOnlineQA/SucOnlineServ.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Gasco.DataType" />
+  <xs:complexType name="MailMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HtmlContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUBJ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MailMessage" nillable="true" type="tns:MailMessage" />
+  <xs:complexType name="MailMessageRetorno">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Gasco.DataType" base="q1:RetornoStandard">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MailMessageRetorno" nillable="true" type="tns:MailMessageRetorno" />
 </xs:schema>

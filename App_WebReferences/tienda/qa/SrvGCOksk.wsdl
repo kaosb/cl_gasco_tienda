@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smtp.gasco.cl/WSGasco/WSKSK/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSK/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://smtp.gasco.cl/WSGasco/WSKSKQA/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSKQA/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSK/">
+    <s:schema elementFormDefault="qualified" targetNamespace="http://smtp.gasco.cl/WSGasco/WSKSKQA/">
       <s:element name="ZKSK_CONSULTA_DIRECC_CLIENTE">
         <s:complexType>
           <s:sequence>
@@ -1028,7 +1028,7 @@
   <wsdl:binding name="SrvGCOkskSoap" type="tns:SrvGCOkskSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ZKSK_CONSULTA_DIRECC_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1037,7 +1037,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_LOG_COMPRAS">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1046,7 +1046,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRECIO">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRECIO" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1055,7 +1055,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRODUCTOS">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRODUCTOS" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRODUCTOS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1064,7 +1064,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_STOCK">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_STOCK" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_STOCK" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1073,7 +1073,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1082,7 +1082,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_PROSPECTO">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_PROSPECTO" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_PROSPECTO" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1091,7 +1091,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MODIFICA_PROSPECTO">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_PROSPECTO" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MODIFICA_PROSPECTO" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1100,7 +1100,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_DATOS_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1109,7 +1109,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MAIL_CONFIRMA_COMPRA">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1118,7 +1118,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MAIL_ORDEN_DESPACHO">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1127,7 +1127,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_ELIMINA_DIRECC_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1136,7 +1136,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_DIRECC_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1145,7 +1145,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_COMUNAS">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_COMUNAS" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_COMUNAS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1154,7 +1154,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_CLI_RUT">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CLI_RUT" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_CLI_RUT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1163,7 +1163,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_VENTA">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_VENTA" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_VENTA" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1172,7 +1172,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CALCULA_CARRO_COMPRA">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1181,7 +1181,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_CARACTERISTICAS">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1190,7 +1190,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRECIO_FLETE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1199,7 +1199,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MODIFICA_CLIENTE">
-      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_CLIENTE" style="document" />
+      <soap:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MODIFICA_CLIENTE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1211,7 +1211,7 @@
   <wsdl:binding name="SrvGCOkskSoap12" type="tns:SrvGCOkskSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ZKSK_CONSULTA_DIRECC_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1220,7 +1220,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_LOG_COMPRAS">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_LOG_COMPRAS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1229,7 +1229,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRECIO">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRECIO" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1238,7 +1238,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRODUCTOS">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRODUCTOS" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRODUCTOS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1247,7 +1247,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_STOCK">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_STOCK" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_STOCK" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1256,7 +1256,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1265,7 +1265,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_PROSPECTO">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_PROSPECTO" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_PROSPECTO" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1274,7 +1274,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MODIFICA_PROSPECTO">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_PROSPECTO" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MODIFICA_PROSPECTO" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1283,7 +1283,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_DATOS_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_DATOS_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1292,7 +1292,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MAIL_CONFIRMA_COMPRA">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MAIL_CONFIRMA_COMPRA" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1301,7 +1301,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MAIL_ORDEN_DESPACHO">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MAIL_ORDEN_DESPACHO" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1310,7 +1310,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_ELIMINA_DIRECC_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_ELIMINA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1319,7 +1319,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_DIRECC_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_DIRECC_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1328,7 +1328,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_COMUNAS">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_COMUNAS" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_COMUNAS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1337,7 +1337,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_CLI_RUT">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CLI_RUT" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_CLI_RUT" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1346,7 +1346,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CREA_VENTA">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CREA_VENTA" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CREA_VENTA" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1355,7 +1355,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CALCULA_CARRO_COMPRA">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CALCULA_CARRO_COMPRA" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1364,7 +1364,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_CARACTERISTICAS">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_CARACTERISTICAS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1373,7 +1373,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_CONSULTA_PRECIO_FLETE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_CONSULTA_PRECIO_FLETE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1382,7 +1382,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ZKSK_MODIFICA_CLIENTE">
-      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSK/ZKSK_MODIFICA_CLIENTE" style="document" />
+      <soap12:operation soapAction="http://smtp.gasco.cl/WSGasco/WSKSKQA/ZKSK_MODIFICA_CLIENTE" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1393,10 +1393,10 @@
   </wsdl:binding>
   <wsdl:service name="SrvGCOksk">
     <wsdl:port name="SrvGCOkskSoap" binding="tns:SrvGCOkskSoap">
-      <soap:address location="http://smtp.gasco.cl/WSGasco/WSKSK/SrvGCOksk.asmx" />
+      <soap:address location="http://smtp.gasco.cl/WSGasco/WSKSKQA/SrvGCOksk.asmx" />
     </wsdl:port>
     <wsdl:port name="SrvGCOkskSoap12" binding="tns:SrvGCOkskSoap12">
-      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSKSK/SrvGCOksk.asmx" />
+      <soap12:address location="http://smtp.gasco.cl/WSGasco/WSKSKQA/SrvGCOksk.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
